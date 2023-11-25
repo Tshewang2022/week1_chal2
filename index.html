@@ -46,6 +46,32 @@
       <input type="button" value="8" onclick="display('8')" />
       <input type="button" value="9" onclick="display('9')" />
       <input type="button" value="0" onclick="display('0')" />
+      <input type="button" value="-" onclick="display('-')" />
+      <input type="button" value="+" onclick="display('+')" />
+      <input type="button" value="." onclick="display('.')" />
+      <input type="button" value="*" onclick="display('*')" />
+      <input type="button" value="/" onclick="display('/')" />
+      <input type="button" value="=" onclick="solve()" />
+      <input type="button" value="DEL" onclick="deleted()" />
     </div>
+    <!-- have to write the function that helps us to handle the input provided by the users -->
+    <script>
+      // this function will return the same value as the user type the input
+      function display(val) {
+        document.getElementById("result").value += val;
+        return val;
+      }
+
+      function solve() {
+        let x = document.getElementById("result").value;
+        let y = eval(x);
+        document.getElementById("result").value = y;
+        return y;
+      }
+
+      function clearScreen() {
+        document.getElementById("result").value = "";
+      }
+    </script>
   </body>
 </html>
